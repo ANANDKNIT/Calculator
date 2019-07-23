@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo 
+[Demo](https://reverent-mccarthy-370093.netlify.com/)
 ## To run this project in your Local 
 1) download this project 
 2) Do npm install  wait for some time as installation of dependencies will take some time
