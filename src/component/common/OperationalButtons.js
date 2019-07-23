@@ -5,13 +5,17 @@ import * as ActionTypes from "../../store/actions/CalculatorActions";
 
 const GenericButton = props => {
   const [getvalue, setValue] = useState("");
-  
+
   const handleButtonClick = value => {
-    if(!Number(value) && !Number(getvalue))
-    {
-      console.log('Something doing wrong');
+
+    // invalid operation if previous and new values are operator 
+    if (!Number(value) && !Number(getvalue)) {
+      // handle errors
+      console.log("doing something wrong");
       return;
     }
+
+    // button click operation
     switch (value) {
       case "=":
         const result = props.expression ? eval(props.expression) : "";
@@ -19,7 +23,7 @@ const GenericButton = props => {
         break;
       case "AC":
         setValue("");
-        props.clearValue();
+        props.clearValues();
         break;
       case "+":
       case "-":
@@ -33,6 +37,7 @@ const GenericButton = props => {
         props.handleAddNewValue(value);
     }
   };
+
   return (
     <div className="button-wrapper">
       {props.data.map(item => (
@@ -40,7 +45,7 @@ const GenericButton = props => {
           key={item}
           variant="contained"
           className="button"
-          color={item==="AC"?"primary":''}
+          color={item === "AC" ? "secondary" : "default"}
           onClick={() => handleButtonClick(item)}
         >
           {item}
@@ -59,13 +64,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleAddNewValue: value =>
-      dispatch({
-        type: ActionTypes.ADD_NEW_VALUE,
-        value: value
-      }),
-    clearValue: () => dispatch({ type: ActionTypes.CLEAR_VALUES }),
+      dispatch({ type: ActionTypes.ADD_NEW_VALUE, value: value }),
+
+    clearValues: () => dispatch({ type: ActionTypes.CLEAR_VALUES }),
+
     handleCalculatedResult: result =>
       dispatch({ type: ActionTypes.EVALUATE_EXPRESSION, result: result }),
+
     handleOperation: operator =>
       dispatch({ type: ActionTypes.PERFORM_OPERATION, operator: operator })
   };

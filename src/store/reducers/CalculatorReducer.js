@@ -29,13 +29,14 @@ const CalculatorReducer = (state = InitialState, action) => {
         expression: action.result
       };
       return newState;
+
     case ActionTypes.PERFORM_OPERATION:
-      console.log(action.operator, state.expression);
       newState = {
         ...state,
         expression: state.expression + action.operator
       };
       return newState;
+
     default:
       return state;
   }

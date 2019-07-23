@@ -13,7 +13,6 @@
   flex-direction: column;
   min-width: 10rem;
   max-width: 35rem;
-  border-radius: 0 !important;
   padding: 1%;
 }
 
@@ -22,22 +21,17 @@
   flex-wrap: wrap;
   flex-basis: 25%;
   justify-content: center;
-
 }
 .button {
   flex-basis: 25%;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .text-field {
   display: flex;
-  padding:1rem;
+  padding: 1rem;
   background-color: #accf8d;
-  border: 2px solid gray !important;
+  border: 2px solid lightgray !important;
   font-size: 1.2rem;
   overflow: auto;
-}
-
-.calculator-heading {
-  padding:0 1rem 1rem 1rem;
 }
