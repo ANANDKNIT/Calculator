@@ -11,27 +11,30 @@
   background-color: aliceblue !important;
   display: flex;
   flex-direction: column;
-  min-width: 10rem;
+  min-width: 8rem;
   max-width: 35rem;
+  border-radius: 0 !important;
   padding: 1%;
 }
 
 .button-wrapper {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 25%;
   justify-content: center;
+
 }
 .button {
   flex-basis: 25%;
-  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .text-field {
   display: flex;
-  padding: 1rem;
+  flex-wrap: wrap;
+  padding:0.5rem;
   background-color: #accf8d;
-  border: 2px solid lightgray !important;
-  font-size: 1.2rem;
+  border: 2px solid gray !important;
+  font-size: 1.5rem;
   overflow: auto;
 }
+

@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
@@ -7,17 +8,17 @@ const GenericButton = props => {
   const [getvalue, setValue] = useState("");
 
   const handleButtonClick = value => {
-
-    // invalid operation if previous and new values are operator 
+    // invalid operation if previous and new values are operator
     if (!Number(value) && !Number(getvalue)) {
       // handle errors
       console.log("doing something wrong");
       return;
     }
 
-    // button click operation
+    // button click operations
     switch (value) {
       case "=":
+        // evaluate the redux expression
         const result = props.expression ? eval(props.expression) : "";
         props.handleCalculatedResult(result);
         break;

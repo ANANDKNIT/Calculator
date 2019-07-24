@@ -6,7 +6,6 @@ import * as ActionTypes from "../store/actions/CalculatorActions";
 
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "+", "-", "*", "/", "=", "AC"];
 const ButtonContainer = props => {
-
   return (
     <Card className="card">
       <Typography
@@ -18,18 +17,20 @@ const ButtonContainer = props => {
       >
         Calculator
       </Typography>
+      {/* calculator display area*/}
       <textarea
         className="text-field"
-        onChange={()=>{}}
+        onChange={() => {}}
         value={props.expression}
       />
+      {/* render calculator buttons*/}
       <GenericButton data={data} />
     </Card>
   );
 };
 const mapStateToProps = state => {
   return {
-    expression: state.expression,
+    expression: state.expression
   };
 };
 
